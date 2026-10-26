@@ -1,0 +1,38 @@
+{
+  "name": "sanitize-log-payload",
+  "version": "0.1.0",
+  "description": "Truncate large base64 and file-related strings in structured log payloads",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && tsc -p tsconfig.test.json && node --test dist-test/sanitize.test.js",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  },
+  "keywords": [
+    "logging",
+    "sanitize",
+    "base64",
+    "truncate"
+  ]
+}
